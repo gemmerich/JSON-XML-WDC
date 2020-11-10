@@ -144,7 +144,7 @@ async function _retrieveJsonData({ dataString, dataUrl, method, token }, retriev
 // Turns tabular data into json for Tableau input
 function _csv2table(csv) {
   let lines = Papa.parse(csv, {
-    delimiter: ',',
+    delimiter: '],"',
     newline: '\n',
     dynamicTyping: true,
   }).data;
