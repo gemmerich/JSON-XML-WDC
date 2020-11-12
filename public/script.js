@@ -144,13 +144,11 @@ async function _retrieveJsonData({ dataString, dataUrl, method, token }, retriev
 // Turns tabular data into json for Tableau input
 function _csv2table(csv) {
   let lines = Papa.parse(csv, {
-    quotes: true,
+	quotes: true,
 	quoteChar: '["',
 	escapeChar: '"]',
 	delimiter: ',',
-	header: true,
-    newline: '\r\n',
-	skipEmptyLines: true,
+    newline: '\n',
     dynamicTyping: true
   }).data;
   let fields = lines.shift();
